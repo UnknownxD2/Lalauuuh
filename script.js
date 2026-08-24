@@ -1,55 +1,352 @@
-const memories = [
-    {
-        photo: "photos/photo1.jpg",
-        text: "Our first memory goes here ♡"
-    },
+* {
+    box-sizing: border-box;
+}
 
-    {
-        photo: "photos/photo2.jpg",
-        text: "Write something special about this moment."
-    },
+body {
+    margin: 0;
+    background: #f4efe7;
+    color: #292621;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
 
-    {
-        photo: "photos/photo3.jpg",
-        text: "A memory that still makes me smile."
-    },
+/* =========================
+   HEADER
+========================= */
 
-    {
-        photo: "photos/photo4.jpg",
-        text: "One of those moments I'll always remember."
-    },
+header {
+    text-align: center;
+    padding: 70px 20px 45px;
+}
 
-    {
-        photo: "photos/photo5.jpg",
-        text: "Another little memory ♡"
-    },
+.small-title {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #8c8175;
+    margin-bottom: 20px;
+}
 
-    {
-        photo: "photos/photo6.jpg",
-        text: "And this one means a lot to me."
+h1 {
+    font-size: clamp(34px, 8vw, 62px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 18px;
+}
+
+h1 span {
+    font-style: italic;
+}
+
+.intro {
+    max-width: 500px;
+    margin: auto;
+    color: #756d64;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =========================
+   MEMORY WALL
+========================= */
+
+#memory-wall {
+    width: 92%;
+    max-width: 1050px;
+    margin: 40px auto 120px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 35px;
+    row-gap: 120px;
+
+    align-items: start;
+}
+
+/* =========================
+   EACH MEMORY
+========================= */
+
+.memory {
+    position: relative;
+    text-align: center;
+}
+
+/* Different heights */
+
+.memory:nth-child(2) {
+    margin-top: 90px;
+}
+
+.memory:nth-child(3) {
+    margin-top: 25px;
+}
+
+.memory:nth-child(4) {
+    margin-top: 110px;
+}
+
+.memory:nth-child(5) {
+    margin-top: 20px;
+}
+
+.memory:nth-child(6) {
+    margin-top: 80px;
+}
+
+/* =========================
+   HANGING STRING
+========================= */
+
+.string {
+    width: 1px;
+    height: 75px;
+
+    background: #8e857a;
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+/* Small pin */
+
+.string::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background: #5e574f;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   PHOTO FRAME
+========================= */
+
+.photo-frame {
+    background: #fff;
+
+    padding: 10px 10px 35px;
+
+    box-shadow:
+        0 12px 30px rgba(50, 40, 30, 0.13);
+
+    transform-origin: top center;
+
+    animation: gentleSwing 5s ease-in-out infinite;
+
+    will-change: transform;
+
+    position: relative;
+}
+
+/* Different swing timing */
+
+.memory:nth-child(2) .photo-frame {
+    animation-duration: 5.8s;
+    animation-delay: -2s;
+}
+
+.memory:nth-child(3) .photo-frame {
+    animation-duration: 4.6s;
+    animation-delay: -1s;
+}
+
+.memory:nth-child(4) .photo-frame {
+    animation-duration: 6.2s;
+    animation-delay: -3s;
+}
+
+.memory:nth-child(5) .photo-frame {
+    animation-duration: 5.2s;
+    animation-delay: -2.5s;
+}
+
+.memory:nth-child(6) .photo-frame {
+    animation-duration: 6.5s;
+    animation-delay: -1.5s;
+}
+
+/* Swing animation */
+
+@keyframes gentleSwing {
+
+    0% {
+        transform: rotate(-2.2deg);
     }
-];
 
+    50% {
+        transform: rotate(2.2deg);
+    }
 
-const wall = document.getElementById("memory-wall");
+    100% {
+        transform: rotate(-2.2deg);
+    }
+}
 
-memories.forEach(memory => {
+/* Different starting angles */
 
-    const item = document.createElement("div");
+.memory:nth-child(even) .photo-frame {
+    transform: rotate(2deg);
+}
 
-    item.className = "memory";
+/* =========================
+   PHOTO
+========================= */
 
-    item.innerHTML = `
-        <div class="string"></div>
+.photo-frame img {
+    display: block;
 
-        <div class="photo-frame">
-            <img src="${memory.photo}" alt="Memory photo">
-        </div>
+    width: 100%;
 
-        <p class="memory-text">
-            ${memory.text}
-        </p>
-    `;
+    aspect-ratio: 3 / 4;
 
-    wall.appendChild(item);
-});
+    object-fit: cover;
+}
+
+/* =========================
+   MEMORY TEXT
+========================= */
+
+.memory-text {
+    margin: 20px 8px 0;
+
+    color: #5f584f;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    font-style: italic;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px 70px;
+
+    color: #8c8175;
+
+    font-size: 14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 55px 20px 35px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+    #memory-wall {
+        width: 90%;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        column-gap: 18px;
+        row-gap: 80px;
+    }
+
+    /* Reset desktop spacing */
+
+    .memory:nth-child(2),
+    .memory:nth-child(3),
+    .memory:nth-child(4),
+    .memory:nth-child(5),
+    .memory:nth-child(6) {
+        margin-top: 0;
+    }
+
+    /* Make alternating photos lower */
+
+    .memory:nth-child(even) {
+        margin-top: 55px;
+    }
+
+    .string {
+        height: 50px;
+    }
+
+    .photo-frame {
+        padding: 7px 7px 25px;
+    }
+
+    .memory-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    header {
+        padding-top: 45px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .small-title {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    #memory-wall {
+        width: 92%;
+
+        column-gap: 12px;
+        row-gap: 65px;
+    }
+
+    .string {
+        height: 42px;
+    }
+
+    .memory-text {
+        margin-top: 14px;
+        font-size: 11px;
+    }
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .photo-frame {
+        animation: none;
+    }
+        }
