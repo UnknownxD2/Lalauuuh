@@ -36,11 +36,12 @@ const memories = [
 const wall = document.getElementById("memory-wall");
 
 
-memories.forEach(memory => {
+memories.forEach((memory) => {
 
     const item = document.createElement("div");
 
     item.className = "memory";
+
 
     item.innerHTML = `
 
@@ -50,7 +51,7 @@ memories.forEach(memory => {
 
             <img
                 src="${memory.photo}"
-                alt="Memory photo"
+                alt="Birthday memory"
             >
 
         </div>
@@ -60,6 +61,7 @@ memories.forEach(memory => {
         </p>
 
     `;
+
 
     wall.appendChild(item);
 
