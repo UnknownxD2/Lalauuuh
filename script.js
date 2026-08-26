@@ -57,7 +57,7 @@ const memories = [
 
     {
         photo: "photos/photo12.jpeg",
-        text: "BEST ONE SO FARR FOR ME JKNSNDFJHFL"
+        text: "BEST ONE FOR ME SO FARR HFGASJYGJKNSNDFJHFL"
     }
 
 ];
