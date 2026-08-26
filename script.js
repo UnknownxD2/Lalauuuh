@@ -17,7 +17,7 @@ const memories = [
 
     {
         photo: "photos/photo4.jpeg",
-        text: "One of those moments I'll always remember."
+        text: "First purath poyi kazhikal :D"
     },
 
     {
