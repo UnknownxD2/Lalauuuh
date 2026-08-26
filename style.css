@@ -208,6 +208,41 @@ h1 span {
 
 
 /* =========================
+   FRAMES 7 - 12
+========================= */
+
+.memory:nth-child(7) .photo-frame {
+    animation-duration: 5.8s;
+    animation-delay: -2.5s;
+}
+
+.memory:nth-child(8) .photo-frame {
+    animation-duration: 6.3s;
+    animation-delay: -1.2s;
+}
+
+.memory:nth-child(9) .photo-frame {
+    animation-duration: 5.1s;
+    animation-delay: -3.2s;
+}
+
+.memory:nth-child(10) .photo-frame {
+    animation-duration: 6.8s;
+    animation-delay: -2s;
+}
+
+.memory:nth-child(11) .photo-frame {
+    animation-duration: 5.5s;
+    animation-delay: -4s;
+}
+
+.memory:nth-child(12) .photo-frame {
+    animation-duration: 7.2s;
+    animation-delay: -1.8s;
+}
+
+
+/* =========================
    SWING ANIMATION
 ========================= */
 
