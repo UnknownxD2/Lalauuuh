@@ -28,6 +28,26 @@ const memories = [
     {
         photo: "photos/photo6.jpeg",
         text: "Camera kandal ann chud ayikolum :/"
+    },
+
+    {
+        photo: "photos/photo7.jpeg",
+        text: "Memory number 7 goes here ♡"
+    },
+
+    {
+        photo: "photos/photo8.jpeg",
+        text: "Another one for the collection :D"
+    },
+
+    {
+        photo: "photos/photo9.jpeg",
+        text: "This one is special hehe ♡"
+    },
+
+    {
+        photo: "photos/photo10.jpeg",
+        text: "And finally... photo number 10 :')"
     }
 
 ];
