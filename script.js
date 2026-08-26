@@ -1,32 +1,32 @@
 const memories = [
 
     {
-        photo: "photos/photo1.jpg",
-        text: "Our first memory goes here ♡"
+        photo: "photos/photo1.jpeg",
+        text: "SHUNRI THANEEE"
     },
 
     {
-        photo: "photos/photo2.jpg",
+        photo: "photos/photo2.jpeg",
         text: "Write something special about this moment."
     },
 
     {
-        photo: "photos/photo3.jpg",
+        photo: "photos/photo3.jpeg",
         text: "A memory that still makes me smile."
     },
 
     {
-        photo: "photos/photo4.jpg",
+        photo: "photos/photo4.jpeg",
         text: "One of those moments I'll always remember."
     },
 
     {
-        photo: "photos/photo5.jpg",
+        photo: "photos/photo5.jpeg",
         text: "Another little memory ♡"
     },
 
     {
-        photo: "photos/photo6.jpg",
+        photo: "photos/photo6.jpeg",
         text: "And this one means a lot to me."
     }
 
