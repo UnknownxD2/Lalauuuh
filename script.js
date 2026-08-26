@@ -48,6 +48,16 @@ const memories = [
     {
         photo: "photos/photo10.jpeg",
         text: "Chiri thanne "
+    },
+
+    {
+        photo: "photos/photo11.jpeg",
+        text: "AIWAAAAAAAAAAAA"
+    },
+
+    {
+        photo: "photos/photo12.jpeg",
+        text: "BEST ONE SO FARR JKNSNDFJHFL"
     }
 
 ];
