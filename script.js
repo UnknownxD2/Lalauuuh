@@ -47,7 +47,7 @@ const memories = [
 
     {
         photo: "photos/photo10.jpeg",
-        text: "AYSHHHHHHHHHHHHHHHHHH "
+        text: "Chiri thanne "
     }
 
 ];
