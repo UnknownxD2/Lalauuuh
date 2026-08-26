@@ -22,7 +22,7 @@ const memories = [
 
     {
         photo: "photos/photo5.jpeg",
-        text: "Another little memory ♡"
+        text: "Sussy laluuuu"
     },
 
     {
