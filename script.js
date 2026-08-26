@@ -37,17 +37,17 @@ const memories = [
 
     {
         photo: "photos/photo8.jpeg",
-        text: "Another one for the collection :D"
+        text: "Pinneyum camera kand CHUDAYII"
     },
 
     {
         photo: "photos/photo9.jpeg",
-        text: "This one is special hehe ♡"
+        text: "Jada thendi thane"
     },
 
     {
         photo: "photos/photo10.jpeg",
-        text: "And finally... photo number 10 :')"
+        text: "AYSHHHHHHHHHHHHHHHHHH "
     }
 
 ];
