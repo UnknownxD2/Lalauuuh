@@ -136,7 +136,7 @@ openButton.addEventListener("click", () => {
 
     const startY = window.scrollY;
 
-    const duration = 2000;
+    const duration = 1000;
     const startTime = performance.now();
 
 
