@@ -16,26 +16,127 @@ body {
 
 
 /* =========================
+   WELCOME SCREEN
+========================= */
+
+#welcome {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: #f4efe7;
+}
+
+.welcome-content {
+    max-width: 650px;
+}
+
+.welcome-small {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: #8c8175;
+
+    margin: 0 0 25px;
+}
+
+#welcome h1 {
+    font-size: clamp(42px, 9vw, 75px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin: 0 0 22px;
+}
+
+#welcome h1 span {
+    display: block;
+
+    font-style: italic;
+}
+
+.welcome-text {
+    color: #756d64;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+#open-button {
+    border: 1px solid #292621;
+
+    background: transparent;
+
+    color: #292621;
+
+    padding: 15px 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#open-button:hover {
+    background: #292621;
+
+    color: #f4efe7;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
    HEADER
 ========================= */
 
 header {
     text-align: center;
+
     padding: 75px 20px 55px;
 }
 
 .small-title {
     font-family: Arial, sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 4px;
+
     color: #8c8175;
+
     margin: 0 0 22px;
 }
 
 h1 {
     font-size: clamp(35px, 8vw, 65px);
+
     font-weight: 400;
+
     line-height: 1.1;
+
     margin: 0 0 20px;
 }
 
@@ -45,9 +146,13 @@ h1 span {
 
 .intro {
     max-width: 500px;
+
     margin: auto;
+
     color: #756d64;
+
     font-size: 16px;
+
     line-height: 1.7;
 }
 
@@ -58,6 +163,7 @@ h1 span {
 
 #memory-wall {
     width: 92%;
+
     max-width: 1050px;
 
     margin: 30px auto 120px;
@@ -67,6 +173,7 @@ h1 span {
     grid-template-columns: repeat(3, 1fr);
 
     column-gap: 35px;
+
     row-gap: 120px;
 
     align-items: start;
@@ -79,6 +186,7 @@ h1 span {
 
 .memory {
     position: relative;
+
     text-align: center;
 }
 
@@ -112,6 +220,7 @@ h1 span {
 
 .string {
     width: 1px;
+
     height: 75px;
 
     background: #8d8479;
@@ -122,9 +231,7 @@ h1 span {
 }
 
 
-/* =========================
-   PIN
-========================= */
+/* PIN */
 
 .string::after {
     content: "";
@@ -139,12 +246,12 @@ h1 span {
     border-radius: 50%;
 
     left: 50%;
+
     bottom: -4px;
 
     transform: translateX(-50%);
 
-    box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -165,7 +272,9 @@ h1 span {
     transform-origin: top center;
 
     animation-name: hangingSwing;
+
     animation-timing-function: ease-in-out;
+
     animation-iteration-count: infinite;
 
     will-change: transform;
@@ -173,7 +282,7 @@ h1 span {
 
 
 /* =========================
-   INDIVIDUAL SWING SPEEDS
+   INDIVIDUAL ANIMATIONS
 ========================= */
 
 .memory:nth-child(1) .photo-frame {
@@ -205,11 +314,6 @@ h1 span {
     animation-duration: 7s;
     animation-delay: -3.5s;
 }
-
-
-/* =========================
-   FRAMES 7 - 12
-========================= */
 
 .memory:nth-child(7) .photo-frame {
     animation-duration: 5.8s;
@@ -319,7 +423,7 @@ footer {
 
 
 /* =========================
-   TABLET / MOBILE
+   MOBILE
 ========================= */
 
 @media (max-width: 700px) {
@@ -336,9 +440,7 @@ footer {
         font-size: 14px;
     }
 
-
     #memory-wall {
-
         width: 90%;
 
         grid-template-columns: repeat(2, 1fr);
@@ -348,35 +450,25 @@ footer {
         row-gap: 80px;
     }
 
-
-    /* Reset desktop offsets */
-
     .memory:nth-child(2),
     .memory:nth-child(3),
     .memory:nth-child(4),
     .memory:nth-child(5),
     .memory:nth-child(6) {
-
         margin-top: 0;
     }
-
-
-    /* Alternating heights */
 
     .memory:nth-child(even) {
         margin-top: 55px;
     }
 
-
     .string {
         height: 50px;
     }
 
-
     .photo-frame {
         padding: 7px 7px 25px;
     }
-
 
     .memory-text {
         font-size: 12px;
@@ -394,15 +486,21 @@ footer {
 
 @media (max-width: 430px) {
 
+    #welcome h1 {
+        font-size: 42px;
+    }
+
+    .welcome-text {
+        font-size: 14px;
+    }
+
     header {
         padding-top: 45px;
     }
 
-
     h1 {
         font-size: 33px;
     }
-
 
     .small-title {
         font-size: 8px;
@@ -410,9 +508,7 @@ footer {
         letter-spacing: 3px;
     }
 
-
     #memory-wall {
-
         width: 92%;
 
         column-gap: 12px;
@@ -420,20 +516,15 @@ footer {
         row-gap: 65px;
     }
 
-
     .string {
         height: 42px;
     }
 
-
     .photo-frame {
-
         padding: 6px 6px 22px;
     }
 
-
     .memory-text {
-
         font-size: 11px;
 
         margin-top: 12px;
