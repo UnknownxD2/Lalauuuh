@@ -10,7 +10,7 @@ body {
     margin: 0;
     background: #f4efe7;
     color: #292621;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Fredoka", sans-serif;
     overflow-x: hidden;
 }
 
@@ -38,9 +38,8 @@ body {
 }
 
 .welcome-small {
-    font-family: Arial, sans-serif;
+    font-size: 12px;
 
-    font-size: 11px;
     letter-spacing: 4px;
 
     color: #8c8175;
@@ -51,7 +50,7 @@ body {
 #welcome h1 {
     font-size: clamp(42px, 9vw, 75px);
 
-    font-weight: 400;
+    font-weight: 600;
 
     line-height: 1.1;
 
@@ -61,13 +60,15 @@ body {
 #welcome h1 span {
     display: block;
 
-    font-style: italic;
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 1.15em;
 }
 
 .welcome-text {
     color: #756d64;
 
-    font-size: 16px;
+    font-size: 17px;
 
     line-height: 1.7;
 
@@ -80,7 +81,7 @@ body {
 ========================= */
 
 #open-button {
-    border: 1px solid #292621;
+    border: 2px solid #292621;
 
     background: transparent;
 
@@ -88,13 +89,17 @@ body {
 
     padding: 15px 30px;
 
-    font-family: Arial, sans-serif;
+    font-family: "Fredoka", sans-serif;
 
-    font-size: 11px;
+    font-weight: 600;
+
+    font-size: 12px;
 
     letter-spacing: 2px;
 
     cursor: pointer;
+
+    border-radius: 50px;
 
     transition: 0.3s ease;
 }
@@ -104,7 +109,59 @@ body {
 
     color: #f4efe7;
 
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.05);
+}
+
+
+/* =========================
+   MAMBO TRANSITION
+========================= */
+
+#mambo-section {
+
+    min-height: 160vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #f4efe7;
+
+    overflow: hidden;
+}
+
+.mambo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: clamp(80px, 22vw, 220px);
+
+    font-weight: 700;
+
+    line-height: 0.72;
+
+    color: #292621;
+
+    user-select: none;
+}
+
+
+/* Make letters slightly playful */
+
+.mambo-text span:nth-child(odd) {
+    transform: rotate(-3deg);
+}
+
+.mambo-text span:nth-child(even) {
+    transform: rotate(3deg);
 }
 
 
@@ -119,7 +176,6 @@ header {
 }
 
 .small-title {
-    font-family: Arial, sans-serif;
 
     font-size: 10px;
 
@@ -131,9 +187,10 @@ header {
 }
 
 h1 {
+
     font-size: clamp(35px, 8vw, 65px);
 
-    font-weight: 400;
+    font-weight: 500;
 
     line-height: 1.1;
 
@@ -141,10 +198,14 @@ h1 {
 }
 
 h1 span {
-    font-style: italic;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 1.1em;
 }
 
 .intro {
+
     max-width: 500px;
 
     margin: auto;
@@ -162,6 +223,7 @@ h1 span {
 ========================= */
 
 #memory-wall {
+
     width: 92%;
 
     max-width: 1050px;
@@ -185,13 +247,14 @@ h1 span {
 ========================= */
 
 .memory {
+
     position: relative;
 
     text-align: center;
 }
 
 
-/* Different heights */
+/* DIFFERENT HEIGHTS */
 
 .memory:nth-child(2) {
     margin-top: 90px;
@@ -219,6 +282,7 @@ h1 span {
 ========================= */
 
 .string {
+
     width: 1px;
 
     height: 75px;
@@ -234,6 +298,7 @@ h1 span {
 /* PIN */
 
 .string::after {
+
     content: "";
 
     position: absolute;
@@ -260,6 +325,7 @@ h1 span {
 ========================= */
 
 .photo-frame {
+
     position: relative;
 
     background: #ffffff;
@@ -282,7 +348,7 @@ h1 span {
 
 
 /* =========================
-   INDIVIDUAL ANIMATIONS
+   INDIVIDUAL SWINGS
 ========================= */
 
 .memory:nth-child(1) .photo-frame {
@@ -347,7 +413,7 @@ h1 span {
 
 
 /* =========================
-   SWING ANIMATION
+   SWING
 ========================= */
 
 @keyframes hangingSwing {
@@ -371,6 +437,7 @@ h1 span {
 ========================= */
 
 .photo-frame img {
+
     display: block;
 
     width: 100%;
@@ -386,24 +453,16 @@ h1 span {
 ========================= */
 
 .memory-text {
+
     margin: 20px 8px 0;
 
     color: #5f584f;
 
-    font-size: 15px;
+    font-family: "Patrick Hand", cursive;
 
-    line-height: 1.65;
+    font-size: 20px;
 
-    font-style: italic;
-}
-
-
-/* =========================
-   HOVER
-========================= */
-
-.photo-frame:hover {
-    animation-play-state: paused;
+    line-height: 1.35;
 }
 
 
@@ -412,6 +471,7 @@ h1 span {
 ========================= */
 
 footer {
+
     text-align: center;
 
     padding: 50px 20px 80px;
@@ -440,7 +500,12 @@ footer {
         font-size: 14px;
     }
 
+    #mambo-section {
+        min-height: 150vh;
+    }
+
     #memory-wall {
+
         width: 90%;
 
         grid-template-columns: repeat(2, 1fr);
@@ -471,9 +536,9 @@ footer {
     }
 
     .memory-text {
-        font-size: 12px;
+        font-size: 16px;
 
-        line-height: 1.5;
+        line-height: 1.4;
 
         margin-top: 14px;
     }
@@ -494,6 +559,14 @@ footer {
         font-size: 14px;
     }
 
+    .mambo-text {
+        font-size: 100px;
+    }
+
+    #mambo-section {
+        min-height: 140vh;
+    }
+
     header {
         padding-top: 45px;
     }
@@ -509,6 +582,7 @@ footer {
     }
 
     #memory-wall {
+
         width: 92%;
 
         column-gap: 12px;
@@ -525,7 +599,7 @@ footer {
     }
 
     .memory-text {
-        font-size: 11px;
+        font-size: 15px;
 
         margin-top: 12px;
     }
@@ -533,62 +607,12 @@ footer {
 
 
 /* =========================
-   ACCESSIBILITY
+   REDUCE MOTION
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     .photo-frame {
         animation: none;
-    }
-}
-/* =========================
-   MAMBO TRANSITION
-========================= */
-
-#mambo-section {
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: flex-start;
-
-    padding: 50px 20px;
-
-    background: #f4efe7;
-
-    overflow: hidden;
-}
-
-.mambo-text {
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    font-size: clamp(55px, 18vw, 180px);
-
-    font-weight: bold;
-
-    line-height: 0.75;
-
-    letter-spacing: -5px;
-
-    color: #292621;
-
-    animation: mamboAppear 1s ease forwards;
-}
-
-@keyframes mamboAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(80px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
