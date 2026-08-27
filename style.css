@@ -29,8 +29,6 @@ body {
     text-align: center;
 
     padding: 30px;
-
-    background: #f4efe7;
 }
 
 .welcome-content {
@@ -39,7 +37,6 @@ body {
 
 .welcome-small {
     font-size: 12px;
-
     letter-spacing: 4px;
 
     color: #8c8175;
@@ -77,10 +74,12 @@ body {
 
 
 /* =========================
-   OPEN BUTTON
+   BUTTONS
 ========================= */
 
-#open-button {
+#open-button,
+#letter-button {
+
     border: 2px solid #292621;
 
     background: transparent;
@@ -104,7 +103,9 @@ body {
     transition: 0.3s ease;
 }
 
-#open-button:hover {
+#open-button:hover,
+#letter-button:hover {
+
     background: #292621;
 
     color: #f4efe7;
@@ -113,25 +114,37 @@ body {
 }
 
 
-/* MAMBO VERTICAL TRANSITION */
+/* =========================
+   MAMBO TRANSITION
+========================= */
 
 #mambo-section {
+
     min-height: 180vh;
+
     display: flex;
+
     justify-content: center;
+
     background: #f4efe7;
+
     overflow: hidden;
 }
 
 .mambo-text {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     padding: 80px 0;
 
     font-size: clamp(90px, 20vw, 200px);
+
     font-weight: bold;
+
     line-height: 0.8;
 }
 
@@ -141,10 +154,11 @@ body {
 
 
 /* =========================
-   HEADER
+   MEMORIES HEADER
 ========================= */
 
 header {
+
     text-align: center;
 
     padding: 75px 20px 55px;
@@ -203,7 +217,7 @@ h1 span {
 
     max-width: 1050px;
 
-    margin: 30px auto 120px;
+    margin: 30px auto 80px;
 
     display: grid;
 
@@ -268,9 +282,6 @@ h1 span {
 
     position: relative;
 }
-
-
-/* PIN */
 
 .string::after {
 
@@ -386,6 +397,31 @@ h1 span {
     animation-delay: -1.8s;
 }
 
+.memory:nth-child(13) .photo-frame {
+    animation-duration: 5.9s;
+    animation-delay: -2.8s;
+}
+
+.memory:nth-child(14) .photo-frame {
+    animation-duration: 6.7s;
+    animation-delay: -1.5s;
+}
+
+.memory:nth-child(15) .photo-frame {
+    animation-duration: 5.3s;
+    animation-delay: -3.6s;
+}
+
+.memory:nth-child(16) .photo-frame {
+    animation-duration: 6.2s;
+    animation-delay: -2.1s;
+}
+
+.memory:nth-child(17) .photo-frame {
+    animation-duration: 7.1s;
+    animation-delay: -4.2s;
+}
+
 
 /* =========================
    SWING
@@ -442,6 +478,309 @@ h1 span {
 
 
 /* =========================
+   ONE LAST THING
+========================= */
+
+.last-thing-container {
+
+    text-align: center;
+
+    padding: 30px 20px 110px;
+}
+
+.last-thing-container p {
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 24px;
+
+    color: #756d64;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SECOND TRANSITION
+========================= */
+
+#letter-transition {
+
+    min-height: 150vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    background: #f4efe7;
+
+    overflow: hidden;
+}
+
+.letter-transition-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 80px 0;
+
+    font-size: clamp(70px, 18vw, 180px);
+
+    font-weight: bold;
+
+    line-height: 0.78;
+}
+
+.letter-transition-text span {
+
+    display: block;
+}
+
+.letter-transition-text .space {
+
+    height: 50px;
+}
+
+
+/* =========================
+   LETTER SECTION
+========================= */
+
+#letter-section {
+
+    min-height: 100vh;
+
+    padding: 80px 20px 120px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.letter-title {
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 28px;
+
+    margin-bottom: 45px;
+
+    color: #756d64;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.envelope {
+
+    position: relative;
+
+    width: min(85vw, 420px);
+
+    height: 280px;
+
+    background: #d8c5ad;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    box-shadow:
+        0 20px 45px rgba(50, 40, 30, 0.18);
+}
+
+
+/* LETTER */
+
+.letter {
+
+    position: absolute;
+
+    width: 88%;
+
+    height: 230px;
+
+    left: 6%;
+
+    bottom: 10px;
+
+    background: #fffdf8;
+
+    transition:
+        transform 1s ease,
+        height 1s ease;
+
+    transform: translateY(40px);
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.letter-content {
+
+    opacity: 0;
+
+    padding: 25px;
+
+    text-align: left;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 20px;
+
+    line-height: 1.45;
+
+    transition: opacity 0.6s ease;
+
+    transition-delay: 0.7s;
+}
+
+.letter-content h2 {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-top: 0;
+}
+
+.signature {
+
+    text-align: right;
+
+    margin-top: 25px;
+}
+
+
+/* ENVELOPE FRONT */
+
+.envelope-front {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 210px solid #cdb99f;
+
+    border-right: 210px solid #cdb99f;
+
+    border-top: 140px solid transparent;
+
+    z-index: 4;
+}
+
+
+/* FLAP */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 210px solid transparent;
+
+    border-right: 210px solid transparent;
+
+    border-top: 150px solid #e2cfb6;
+
+    transform-origin: top;
+
+    transition: transform 0.9s ease;
+
+    z-index: 5;
+}
+
+
+/* OPEN ENVELOPE */
+
+.envelope.open .envelope-flap {
+
+    transform: rotateX(180deg);
+
+    z-index: 1;
+}
+
+.envelope.open .letter {
+
+    transform: translateY(-190px);
+
+    height: 420px;
+
+    z-index: 3;
+
+    overflow-y: auto;
+}
+
+.envelope.open .letter-content {
+
+    opacity: 1;
+}
+
+
+/* TAP TEXT */
+
+.tap-text {
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 22px;
+
+    color: #756d64;
+
+    margin-top: 25px;
+
+    animation: tapBounce 1.5s infinite;
+}
+
+@keyframes tapBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -479,6 +818,10 @@ footer {
         min-height: 150vh;
     }
 
+    #letter-transition {
+        min-height: 130vh;
+    }
+
     #memory-wall {
 
         width: 90%;
@@ -511,6 +854,7 @@ footer {
     }
 
     .memory-text {
+
         font-size: 16px;
 
         line-height: 1.4;
@@ -540,6 +884,14 @@ footer {
 
     #mambo-section {
         min-height: 140vh;
+    }
+
+    #letter-transition {
+        min-height: 125vh;
+    }
+
+    .letter-transition-text {
+        font-size: 90px;
     }
 
     header {
@@ -578,6 +930,32 @@ footer {
 
         margin-top: 12px;
     }
+
+    .envelope {
+        height: 240px;
+    }
+
+    .envelope-front {
+
+        border-left-width: 45vw;
+
+        border-right-width: 45vw;
+
+        border-top-width: 120px;
+    }
+
+    .envelope-flap {
+
+        border-left-width: 45vw;
+
+        border-right-width: 45vw;
+
+        border-top-width: 130px;
+    }
+
+    .envelope.open .letter {
+        transform: translateY(-160px);
+    }
 }
 
 
@@ -587,7 +965,8 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .photo-frame {
+    .photo-frame,
+    .tap-text {
         animation: none;
     }
 }
