@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const distance = target - start;
 
-        const duration = 6000;
+        const duration = 1000;
 
         let startTime = null;
 
