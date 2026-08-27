@@ -52,27 +52,27 @@ const memories = [
 
     {
         photo: "photos/photo11.jpeg",
-        text: "AIWAAAAAAAAAAAA"
+        text: "Tharate ornm ann *pavm jerry"
     },
 
     {
         photo: "photos/photo12.jpeg",
-        text: "FAV SNAP HFGASJYGJKNSNDFJHFL"
+        text: "njmalan puchandi"
     },
 
     {
         photo: "photos/photo13.jpeg",
-        text: "AIWAAAAAAAAAAAA"
+        text: "LALLU THE MOGGER SIGMA ALPHA BETA GURLL"
     },
 
     {
         photo: "photos/photo14.jpeg",
-        text: "AIWAAAAAAAAAAAA"
+        text: "Thenga pothikn povuna kattuvasi"
     },
 
     {
         photo: "photos/photo15.jpeg",
-        text: "AIWAAAAAAAAAAAA"
+        text: "BLEH"
     },
 
     {
@@ -82,7 +82,7 @@ const memories = [
 
     {
         photo: "photos/photo17.jpeg",
-        text: "AIWAAAAAAAAAAAA"
+        text: "FAV SNAP HFXGFHSERSEAFBNUHG"
     }
 ];
 
