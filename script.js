@@ -108,8 +108,8 @@ const memoriesSection =
 
 openButton.addEventListener("click", () => {
 
-    memoriesSection.scrollIntoView({
-        behavior: "smooth"
-    });
+   document.getElementById("mambo-section").scrollIntoView({
+    behavior: "smooth"
+});
 
 });
