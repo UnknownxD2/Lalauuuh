@@ -100,6 +100,10 @@ memories.forEach((memory) => {
    OPEN BUTTON
 ========================= */
 
+/* =========================
+   OPEN BUTTON AUTO SCROLL
+========================= */
+
 const openButton = document.getElementById("open-button");
 
 const memoriesSection =
@@ -108,8 +112,12 @@ const memoriesSection =
 
 openButton.addEventListener("click", () => {
 
-   document.getElementById("mambo-section").scrollIntoView({
-    behavior: "smooth"
-});
+    const targetPosition =
+        memoriesSection.offsetTop;
+
+    window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+    });
 
 });
