@@ -124,54 +124,58 @@ memories.forEach((memory) => {
    OPEN BUTTON AUTO SCROLL
 ========================= */
 
-const openButton = document.getElementById("open-button");
-const memoriesSection = document.getElementById("memories-section");
+/* =========================
+   SLOW AUTO SCROLL
+========================= */
 
-openButton.addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const startPosition = window.scrollY;
-    const targetPosition = memoriesSection.offsetTop;
+    const openButton = document.getElementById("open-button");
+    const memoriesSection = document.getElementById("memories-section");
 
-    const distance = targetPosition - startPosition;
+    openButton.addEventListener("click", () => {
 
-    const duration = 2000; // 6 seconds
+        const target =
+            memoriesSection.getBoundingClientRect().top +
+            window.pageYOffset;
 
-    let startTime = null;
+        const start = window.pageYOffset;
+
+        const distance = target - start;
+
+        const duration = 6000;
+
+        let startTime = null;
 
 
-    function animateScroll(currentTime) {
+        function scrollAnimation(currentTime) {
 
-        if (!startTime) {
-            startTime = currentTime;
+            if (startTime === null) {
+                startTime = currentTime;
+            }
+
+            const elapsed = currentTime - startTime;
+
+            const progress =
+                Math.min(elapsed / duration, 1);
+
+            window.scrollTo(
+                0,
+                start + (distance * progress)
+            );
+
+
+            if (progress < 1) {
+
+                requestAnimationFrame(scrollAnimation);
+
+            }
+
         }
 
-        const elapsed = currentTime - startTime;
 
-        const progress = Math.min(elapsed / duration, 1);
+        requestAnimationFrame(scrollAnimation);
 
-
-        // Smooth easing
-        const ease =
-            progress < 0.5
-                ? 4 * progress * progress * progress
-                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-
-        window.scrollTo(
-            0,
-            startPosition + distance * ease
-        );
-
-
-        if (progress < 1) {
-
-            requestAnimationFrame(animateScroll);
-
-        }
-
-    }
-
-
-    requestAnimationFrame(animateScroll);
+    });
 
 });
