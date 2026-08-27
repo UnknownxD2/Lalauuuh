@@ -124,58 +124,57 @@ memories.forEach((memory) => {
    OPEN BUTTON AUTO SCROLL
 ========================= */
 
-/* =========================
-   SLOW AUTO SCROLL
-========================= */
+const openButton = document.getElementById("open-button");
 
-document.addEventListener("DOMContentLoaded", () => {
+openButton.addEventListener("click", () => {
 
-    const openButton = document.getElementById("open-button");
-    const memoriesSection = document.getElementById("memories-section");
+    const target = document.getElementById("memories-section");
 
-    openButton.addEventListener("click", () => {
+    const targetY =
+        target.getBoundingClientRect().top +
+        window.scrollY;
 
-        const target =
-            memoriesSection.getBoundingClientRect().top +
-            window.pageYOffset;
+    const startY = window.scrollY;
 
-        const start = window.pageYOffset;
-
-        const distance = target - start;
-
-        const duration = 1000;
-
-        let startTime = null;
+    const duration = 6000;
+    const startTime = performance.now();
 
 
-        function scrollAnimation(currentTime) {
-
-            if (startTime === null) {
-                startTime = currentTime;
-            }
-
-            const elapsed = currentTime - startTime;
-
-            const progress =
-                Math.min(elapsed / duration, 1);
-
-            window.scrollTo(
-                0,
-                start + (distance * progress)
-            );
+    function easeInOut(t) {
+        return t < 0.5
+            ? 2 * t * t
+            : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
 
 
-            if (progress < 1) {
+    function scrollStep(currentTime) {
 
-                requestAnimationFrame(scrollAnimation);
+        const elapsed = currentTime - startTime;
 
-            }
+        const progress =
+            Math.min(elapsed / duration, 1);
+
+        const easedProgress =
+            easeInOut(progress);
+
+
+        window.scrollTo({
+            top: startY +
+                (targetY - startY) * easedProgress,
+            left: 0,
+            behavior: "instant"
+        });
+
+
+        if (progress < 1) {
+
+            requestAnimationFrame(scrollStep);
 
         }
 
+    }
 
-        requestAnimationFrame(scrollAnimation);
 
-    });
+    requestAnimationFrame(scrollStep);
 
 });
