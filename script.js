@@ -58,8 +58,32 @@ const memories = [
     {
         photo: "photos/photo12.jpeg",
         text: "FAV SNAP HFGASJYGJKNSNDFJHFL"
-    }
+    },
 
+    {
+        photo: "photos/photo13.jpeg",
+        text: "AIWAAAAAAAAAAAA"
+    },
+
+    {
+        photo: "photos/photo14.jpeg",
+        text: "AIWAAAAAAAAAAAA"
+    },
+
+    {
+        photo: "photos/photo15.jpeg",
+        text: "AIWAAAAAAAAAAAA"
+    },
+
+    {
+        photo: "photos/photo16.jpeg",
+        text: "AIWAAAAAAAAAAAA"
+    },
+
+    {
+        photo: "photos/photo17.jpeg",
+        text: "AIWAAAAAAAAAAAA"
+    }
 ];
 
 
