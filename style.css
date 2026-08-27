@@ -113,55 +113,30 @@ body {
 }
 
 
-/* =========================
-   MAMBO TRANSITION
-========================= */
+/* MAMBO VERTICAL TRANSITION */
 
 #mambo-section {
-
-    min-height: 160vh;
-
+    min-height: 180vh;
     display: flex;
-
     justify-content: center;
-
-    align-items: center;
-
     background: #f4efe7;
-
     overflow: hidden;
 }
 
 .mambo-text {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
-    font-family: "Fredoka", sans-serif;
+    padding: 80px 0;
 
-    font-size: clamp(80px, 22vw, 220px);
-
-    font-weight: 700;
-
-    line-height: 0.72;
-
-    color: #292621;
-
-    user-select: none;
+    font-size: clamp(90px, 20vw, 200px);
+    font-weight: bold;
+    line-height: 0.8;
 }
 
-
-/* Make letters slightly playful */
-
-.mambo-text span:nth-child(odd) {
-    transform: rotate(-3deg);
-}
-
-.mambo-text span:nth-child(even) {
-    transform: rotate(3deg);
+.mambo-text span {
+    display: block;
 }
 
 
