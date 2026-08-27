@@ -134,7 +134,7 @@ openButton.addEventListener("click", () => {
 
     const distance = targetPosition - startPosition;
 
-    const duration = 6000; // 6 seconds
+    const duration = 2000; // 6 seconds
 
     let startTime = null;
 
