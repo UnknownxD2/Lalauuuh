@@ -542,3 +542,53 @@ footer {
         animation: none;
     }
 }
+/* =========================
+   MAMBO TRANSITION
+========================= */
+
+#mambo-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 50px 20px;
+
+    background: #f4efe7;
+
+    overflow: hidden;
+}
+
+.mambo-text {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(55px, 18vw, 180px);
+
+    font-weight: bold;
+
+    line-height: 0.75;
+
+    letter-spacing: -5px;
+
+    color: #292621;
+
+    animation: mamboAppear 1s ease forwards;
+}
+
+@keyframes mamboAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
