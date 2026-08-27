@@ -84,8 +84,13 @@ const memories = [
         photo: "photos/photo17.jpeg",
         text: "FAV SNAP HFXGFHSERSEAFBNUHG"
     }
+
 ];
 
+
+/* =========================
+   CREATE PHOTO MEMORIES
+========================= */
 
 const wall = document.getElementById("memory-wall");
 
@@ -121,35 +126,35 @@ memories.forEach((memory) => {
 
 
 /* =========================
-   OPEN BUTTON AUTO SCROLL
+   CUSTOM AUTO SCROLL
 ========================= */
 
-const openButton = document.getElementById("open-button");
-
-openButton.addEventListener("click", () => {
-
-    const target = document.getElementById("memories-section");
-
-    const targetY =
-        target.getBoundingClientRect().top +
-        window.scrollY;
+function autoScrollTo(targetElement, duration = 6000) {
 
     const startY = window.scrollY;
 
-    const duration = 1000;
+    const targetY =
+        targetElement.getBoundingClientRect().top +
+        window.scrollY;
+
+    const distance = targetY - startY;
+
     const startTime = performance.now();
 
 
     function easeInOut(t) {
+
         return t < 0.5
             ? 2 * t * t
             : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
     }
 
 
     function scrollStep(currentTime) {
 
-        const elapsed = currentTime - startTime;
+        const elapsed =
+            currentTime - startTime;
 
         const progress =
             Math.min(elapsed / duration, 1);
@@ -158,12 +163,10 @@ openButton.addEventListener("click", () => {
             easeInOut(progress);
 
 
-        window.scrollTo({
-            top: startY +
-                (targetY - startY) * easedProgress,
-            left: 0,
-            behavior: "instant"
-        });
+        window.scrollTo(
+            0,
+            startY + distance * easedProgress
+        );
 
 
         if (progress < 1) {
@@ -176,5 +179,62 @@ openButton.addEventListener("click", () => {
 
 
     requestAnimationFrame(scrollStep);
+
+}
+
+
+/* =========================
+   OPEN IT BUTTON
+========================= */
+
+const openButton =
+    document.getElementById("open-button");
+
+const memoriesSection =
+    document.getElementById("memories-section");
+
+
+openButton.addEventListener("click", () => {
+
+    autoScrollTo(
+        memoriesSection,
+        6000
+    );
+
+});
+
+
+/* =========================
+   ONE LAST THING BUTTON
+========================= */
+
+const letterButton =
+    document.getElementById("letter-button");
+
+const letterSection =
+    document.getElementById("letter-section");
+
+
+letterButton.addEventListener("click", () => {
+
+    autoScrollTo(
+        letterSection,
+        5000
+    );
+
+});
+
+
+/* =========================
+   OPEN ENVELOPE
+========================= */
+
+const envelope =
+    document.getElementById("envelope");
+
+
+envelope.addEventListener("click", () => {
+
+    envelope.classList.toggle("open");
 
 });
