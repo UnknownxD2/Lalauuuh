@@ -72,7 +72,6 @@ memories.forEach((memory) => {
 
     item.className = "memory";
 
-
     item.innerHTML = `
 
         <div class="string"></div>
@@ -92,7 +91,25 @@ memories.forEach((memory) => {
 
     `;
 
-
     wall.appendChild(item);
+
+});
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+const openButton = document.getElementById("open-button");
+
+const memoriesSection =
+    document.getElementById("memories-section");
+
+
+openButton.addEventListener("click", () => {
+
+    memoriesSection.scrollIntoView({
+        behavior: "smooth"
+    });
 
 });
