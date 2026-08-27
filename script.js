@@ -129,9 +129,49 @@ const memoriesSection = document.getElementById("memories-section");
 
 openButton.addEventListener("click", () => {
 
-    memoriesSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+    const startPosition = window.scrollY;
+    const targetPosition = memoriesSection.offsetTop;
+
+    const distance = targetPosition - startPosition;
+
+    const duration = 6000; // 6 seconds
+
+    let startTime = null;
+
+
+    function animateScroll(currentTime) {
+
+        if (!startTime) {
+            startTime = currentTime;
+        }
+
+        const elapsed = currentTime - startTime;
+
+        const progress = Math.min(elapsed / duration, 1);
+
+
+        // Smooth easing
+        const ease =
+            progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+
+        window.scrollTo(
+            0,
+            startPosition + distance * ease
+        );
+
+
+        if (progress < 1) {
+
+            requestAnimationFrame(animateScroll);
+
+        }
+
+    }
+
+
+    requestAnimationFrame(animateScroll);
 
 });
