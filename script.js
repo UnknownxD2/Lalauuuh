@@ -101,19 +101,13 @@ memories.forEach((memory) => {
 ========================= */
 
 const openButton = document.getElementById("open-button");
-
-const memoriesSection =
-    document.getElementById("memories-section");
-
+const memoriesSection = document.getElementById("memories-section");
 
 openButton.addEventListener("click", () => {
 
-    const targetPosition =
-        memoriesSection.offsetTop;
-
-    window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
+    memoriesSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
     });
 
 });
